@@ -1,0 +1,11 @@
+# VS Code settings
+.vscode/
+
+# Compiled Binaries / Executables
+*.exe
+*.out
+my_malloc     # If you compile without an extension on Linux/macOS
+
+# Object files and Build artifacts
+*.o
+*.obj
