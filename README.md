@@ -2,7 +2,6 @@
 
 A lightweight, low-level custom memory allocator that implements replacements for the standard `malloc()` and `free()` functions. This project manages a contiguous heap space requested from the operating system, utilizing a **Best-Fit allocation strategy** and a block header metadata system.
 
----
 
 ## 🚀 Key Technical Achievements
 
@@ -11,7 +10,6 @@ A lightweight, low-level custom memory allocator that implements replacements fo
 * **Implicit Free List Data Structure:** Utilizes an embedded, singly linked list architecture where each memory chunk is preceded by a `Header` struct metadata block tracking allocation states (`is_free`) and capacities.
 * **Rigorous Pointer Arithmetic:** Leverages precise byte-level pointer manipulation to cleanly calculate offsets between metadata headers and the user-accessible payloads (e.g., matching alignment and evaluating boundaries via `(char*)block + HEADER_SIZE`).
 
----
 
 ## 🏗️ Architecture & Memory Layout
 
@@ -23,7 +21,7 @@ When a block is allocated, it is split into two distinct parts: a **Header** (me
 4. If a found block is significantly larger than requested, it is dynamically split into two smaller blocks to conserve space.
 5. If no suitable block is found, `sbrk()` is invoked to safely grow the system heap.
 
----
+
 
 ## 🛠️ Technology Stack
 
@@ -31,7 +29,7 @@ When a block is allocated, it is split into two distinct parts: a **Header** (me
 * **OS Interface:** POSIX standard memory management (`sbrk()`)
 * **Core Concepts:** Explicit Systems Programming, Memory Fragmentation Management, Linked Lists, Pointer Math Alignment.
 
----
+
 
 ## 💾 Installation & Compilation
 
